@@ -28,10 +28,6 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-.btn {
-  font-family: 'Rubik', sans-serif;
-}
-
 .main {
   display: flex;
   height: 100%;
@@ -40,7 +36,38 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   width: 400px;
   background-color: tomato;
+  border-radius: 5px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.display {
+  height: 150px;
+  width: 360px;
+  background-color: gainsboro;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 360px;
+  background-color: black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn {
+  width: 90px;
+  height: 60px;
+  color: aliceblue;
+  background-color: black;
 }
