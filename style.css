@@ -40,8 +40,9 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3px;
   width: 330px;
-  height: 560px;
+  height: 563px;
   background-color: black;
   border-radius: 3px;
   font-family: 'Rubik', sans-serif;
@@ -50,9 +51,11 @@ p, h1, h2, h3, h4, h5, h6 {
 .display {
   width: 320px;
   height: 150px;
-  font-size: 1.3rem;
+  font-size: 2rem;
+  text-align: right;
+  overflow-wrap: break-word;
+  padding: 5px;
   background-color: honeydew;
-  border: 1px solid black;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
@@ -75,4 +78,14 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: black;
   border: none;
   border-radius: 3px;
+}
+
+.btn:hover {
+  background-color: honeydew;
+  color: black;
+}
+
+.btn:active {
+  background-color: rgb(209, 233, 209);
+  color: black;
 }
