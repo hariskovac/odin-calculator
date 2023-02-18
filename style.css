@@ -40,34 +40,39 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  width: 400px;
-  background-color: tomato;
-  border-radius: 5px;
+  width: 330px;
+  height: 560px;
+  background-color: black;
+  border-radius: 3px;
   font-family: 'Rubik', sans-serif;
 }
 
 .display {
+  width: 320px;
   height: 150px;
-  width: 360px;
-  background-color: gainsboro;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  font-size: 1.3rem;
+  background-color: honeydew;
+  border: 1px solid black;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
-  width: 360px;
+  width: 320px;
+  height: 400px;
   background-color: black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .btn {
-  width: 90px;
-  height: 60px;
-  color: aliceblue;
+  width: 80px;
+  height: 80px;
+  font-size: 1.3rem;
+  color: white;
   background-color: black;
+  border: none;
+  border-radius: 3px;
 }
