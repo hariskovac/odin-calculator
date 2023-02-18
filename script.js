@@ -1,3 +1,27 @@
+const screen = document.querySelector(".screen");
+const digits = document.querySelectorAll(".digit"); 
+const operators = document.querySelectorAll(".operator");
+
+let num1;
+let num2;
+let operator;
+
+digits.forEach((digit) => {
+  digit.addEventListener("click", updateScreen); 
+});
+
+operators.forEach((operator) => {
+  operator.addEventListener("click", updateScreen);
+})
+
+function updateScreen(e) {
+  if (screen.textContent == 0 && e.target.classList.contains("digit")) {
+    screen.textContent = e.target.textContent;
+  } else {
+    screen.textContent += e.target.textContent;
+  }
+}
+
 function add(x, y) {
   return x + y;
 }
