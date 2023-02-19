@@ -15,10 +15,20 @@ operators.forEach((operator) => {
 })
 
 function updateScreen(e) {
-  if (screen.textContent == 0 && e.target.classList.contains("digit")) {
-    screen.textContent = e.target.textContent;
-  } else {
-    screen.textContent += e.target.textContent;
+  if (e.target.classList.contains("operator")) {
+    if (screen.textContent == 0) {
+      screen.textContent = 0 + e.target.textContent;
+    } else if (!screen.textContent.match(/\D/g)) {
+      screen.textContent += e.target.textContent;
+    }
+  }
+  
+  if (e.target.classList.contains("digit")) {
+    if (screen.textContent == 0) {
+      screen.textContent = e.target.textContent;
+    } else {
+      screen.textContent += e.target.textContent;
+    }
   }
 }
 
