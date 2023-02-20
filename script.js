@@ -1,6 +1,7 @@
 const screen = document.querySelector(".screen");
 const digits = document.querySelectorAll(".digit"); 
 const operators = document.querySelectorAll(".operator");
+const decimal = document.querySelector(".decimal");
 
 let num1 = "";
 let num2 = "";
@@ -13,6 +14,8 @@ digits.forEach((digit) => {
 operators.forEach((operator) => {
   operator.addEventListener("click", calculate);
 })
+
+decimal.addEventListener("click", addDecimal);
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
@@ -37,6 +40,15 @@ function calculate(e) {
       screen.textContent = num1 + operator + num2;
     }
   }
+}
+
+function addDecimal() {
+  if (operator === "" && !num1.includes(".")) {
+    num1 += ".";
+  } else if (operator !== "" && !num2.includes(".")) {
+    num2 += ".";
+  }
+  screen.textContent = num1 + operator + num2;
 }
 
 function add(x, y) {
