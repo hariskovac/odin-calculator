@@ -33,6 +33,8 @@ function updateScreen(e) {
       screen.textContent = num1 + operator + num2;
     } else {
       screen.textContent = operate(operator, parseInt(num1), parseInt(num2));
+      operator = e.target.textContent;
+      screen.textContent = num1 + operator + num2;
     }
   }
 }
