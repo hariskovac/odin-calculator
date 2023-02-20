@@ -7,14 +7,14 @@ let num2 = "";
 let operator = "";
 
 digits.forEach((digit) => {
-  digit.addEventListener("click", updateScreen); 
+  digit.addEventListener("click", calculate); 
 });
 
 operators.forEach((operator) => {
-  operator.addEventListener("click", updateScreen);
+  operator.addEventListener("click", calculate);
 })
 
-function updateScreen(e) {
+function calculate(e) {
   if (e.target.classList.contains("digit")) {
     if (operator === "") {
       num1 += e.target.textContent;
