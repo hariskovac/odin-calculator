@@ -38,23 +38,27 @@ function updateScreen(e) {
 }
 
 function add(x, y) {
-  console.log(x + y);
-  return x + y;
+  num1 = x + y;
+  num2 = "";
+  return num1;
 }
 
 function subtract(x, y) {
-  console.log(x - y);
-  return x - y;
+  num1 = x - y;
+  num2 = "";
+  return num1;
 }
 
 function multiply(x, y) {
-  console.log(x * y);
-  return x * y;
+  num1 = x * y;
+  num2 = "";
+  return num1;
 }
 
 function divide(x, y) {
-  console.log(x / y);
-  return x / y;
+  num1 = x / y;
+  num2 = "";
+  return num1;
 }
 
 function operate(operator, x, y) {
