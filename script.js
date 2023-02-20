@@ -45,9 +45,9 @@ function calculate(e) {
 }
 
 function addDecimal() {
-  if (operator === "" && !num1.includes(".")) {
+  if (operator === "" && !num1.toString().includes(".")) {
     num1 += ".";
-  } else if (operator !== "" && !num2.includes(".")) {
+  } else if (operator !== "" && !num2.toString().includes(".")) {
     num2 += ".";
   }
   screen.textContent = num1 + operator + num2;
