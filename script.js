@@ -21,19 +21,20 @@ function updateScreen(e) {
     } else {
       num2 += e.target.textContent;  
     }
+    screen.textContent = num1 + operator + num2;
   }
 
   if (e.target.classList.contains("operator")) {
     if (num1 === "") {
       num1 = 0;
+      screen.textContent = num1 + operator + num2;
     } else if (num2 === "") {
       operator = e.target.textContent;
+      screen.textContent = num1 + operator + num2;
     } else {
-      operate(operator, parseInt(num1), parseInt(num2));
+      screen.textContent = operate(operator, parseInt(num1), parseInt(num2));
     }
   }
-
-  screen.textContent = num1 + operator + num2;
 }
 
 function add(x, y) {
@@ -59,19 +60,19 @@ function divide(x, y) {
 function operate(operator, x, y) {
   switch (operator) {
     case " + ":
-      add(x, y);
+      return add(x, y);
       break;
     
     case " - ":
-      subtract(x, y);
+      return subtract(x, y);
       break;
 
     case " \u00D7 ":
-      multiply(x, y);
+      return multiply(x, y);
       break;
 
     case " / ":
-      divide(x, y);
+      return divide(x, y);
       break;
       
     default:
