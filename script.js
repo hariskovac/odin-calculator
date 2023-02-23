@@ -40,15 +40,11 @@ function calculate(e) {
   if (e.target.classList.contains("operator")) {
     if (num1 === "") {
       num1 = 0;
-      screen.textContent = num1 + operator + num2;
-    } else if (num2 === "") {
-      operator = e.target.textContent;
-      screen.textContent = num1 + operator + num2;
-    } else {
+    } else if (num2 !== "") {
       screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
-      operator = e.target.textContent;
-      screen.textContent = num1 + operator + num2;
-    }
+    } 
+    operator = e.target.textContent;
+    screen.textContent = num1 + operator + num2;
   }
 }
 
