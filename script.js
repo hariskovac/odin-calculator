@@ -134,10 +134,17 @@ function multiply(x, y) {
 }
 
 function divide(x, y) {
-  num1 = round(x / y);
-  num2 = "";
-  operator = "";
-  return num1;
+  if (y !== 0) {
+    num1 = round(x / y);
+    num2 = "";
+    operator = "";
+    return num1;
+  } else {
+    num1 = "";
+    num2 = "";
+    operator = "";
+    return "Cannot divide by 0";
+  }
 }
 
 function round(num) {
