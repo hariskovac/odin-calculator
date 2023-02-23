@@ -5,6 +5,7 @@ const decimal = document.querySelector(".decimal");
 const sign = document.querySelector(".sign");
 const percent = document.querySelector(".percent");
 const clear = document.querySelector(".clear");
+const equals = document.querySelector(".equals");
 
 let num1 = "";
 let num2 = "";
@@ -22,6 +23,7 @@ decimal.addEventListener("click", addDecimal);
 sign.addEventListener("click", changeSign);
 percent.addEventListener("click", toPercent);
 clear.addEventListener("click", clearCalc);
+equals.addEventListener("click", evaluate);
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
@@ -88,6 +90,12 @@ function clearCalc() {
   num2 = "";
   operator = "";
   screen.textContent = num1 + operator + num2;
+}
+
+function evaluate() {
+  if (num1 !== "" && num2 !== "" && operator !== "") {
+    screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
+  }
 }
 
 function add(x, y) {
