@@ -3,28 +3,28 @@ let num2 = "";
 let operator = "";
 
 const screen = document.querySelector(".screen");
-const digits = document.querySelectorAll(".digit"); 
-const operators = document.querySelectorAll(".operator");
-const decimal = document.querySelector(".decimal");
-const sign = document.querySelector(".sign");
-const percent = document.querySelector(".percent");
-const clear = document.querySelector(".clear");
-const equals = document.querySelector(".equals");
+const digitBtns = document.querySelectorAll(".digit"); 
+const operatorBtns = document.querySelectorAll(".operator");
+const decimalBtn = document.querySelector(".decimal");
+const signBtn = document.querySelector(".sign");
+const percentBtn = document.querySelector(".percent");
+const clearBtn = document.querySelector(".clear");
+const equalsBtn = document.querySelector(".equals");
 const delBtn = document.querySelector(".del");
 
-digits.forEach((digit) => {
+digitBtns.forEach((digit) => {
   digit.addEventListener("click", calculate); 
 });
 
-operators.forEach((operator) => {
+operatorBtns.forEach((operator) => {
   operator.addEventListener("click", calculate);
 })
 
-decimal.addEventListener("click", addDecimal);
-sign.addEventListener("click", changeSign);
-percent.addEventListener("click", toPercent);
-clear.addEventListener("click", clearCalc);
-equals.addEventListener("click", evaluate);
+decimalBtn.addEventListener("click", addDecimal);
+signBtn.addEventListener("click", changeSign);
+percentBtn.addEventListener("click", toPercent);
+clearBtn.addEventListener("click", clearCalc);
+equalsBtn.addEventListener("click", evaluate);
 delBtn.addEventListener("click", deleteLast);
 
 function calculate(e) {
