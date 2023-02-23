@@ -101,24 +101,28 @@ function evaluate() {
 function add(x, y) {
   num1 = x + y;
   num2 = "";
+  operator = "";
   return num1;
 }
 
 function subtract(x, y) {
   num1 = x - y;
   num2 = "";
+  operator = "";
   return num1;
 }
 
 function multiply(x, y) {
   num1 = x * y;
   num2 = "";
+  operator = "";
   return num1;
 }
 
 function divide(x, y) {
   num1 = x / y;
   num2 = "";
+  operator = "";
   return num1;
 }
 
