@@ -75,11 +75,11 @@ function changeSign() {
 function toPercent() {
   if (operator === "") {
     if (num1 !== "") {
-      num1 = parseFloat(num1) / 100;
+      num1 = round(parseFloat(num1) / 100);
     }
   } else {
     if (num2 !== "") {
-      num2 = parseFloat(num2) / 100;
+      num2 = round(parseFloat(num2) / 100);
     }
   }
   screen.textContent = num1 + operator + num2;
@@ -99,31 +99,35 @@ function evaluate() {
 }
 
 function add(x, y) {
-  num1 = x + y;
+  num1 = round(x + y);
   num2 = "";
   operator = "";
   return num1;
 }
 
 function subtract(x, y) {
-  num1 = x - y;
+  num1 = round(x - y);
   num2 = "";
   operator = "";
   return num1;
 }
 
 function multiply(x, y) {
-  num1 = x * y;
+  num1 = round(x * y);
   num2 = "";
   operator = "";
   return num1;
 }
 
 function divide(x, y) {
-  num1 = x / y;
+  num1 = round(x / y);
   num2 = "";
   operator = "";
   return num1;
+}
+
+function round(num) {
+  return Math.round((num) * 100000000) / 100000000;
 }
 
 function operate(operator, x, y) {
