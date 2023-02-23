@@ -3,6 +3,7 @@ const digits = document.querySelectorAll(".digit");
 const operators = document.querySelectorAll(".operator");
 const decimal = document.querySelector(".decimal");
 const sign = document.querySelector(".sign");
+const percent = document.querySelector(".percent");
 
 let num1 = "";
 let num2 = "";
@@ -18,6 +19,7 @@ operators.forEach((operator) => {
 
 decimal.addEventListener("click", addDecimal);
 sign.addEventListener("click", changeSign);
+percent.addEventListener("click", toPercent);
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
@@ -61,6 +63,19 @@ function changeSign() {
   } else {
     if (num2 !== "") {
       num2 = -1 * parseFloat(num2);
+    }
+  }
+  screen.textContent = num1 + operator + num2;
+}
+
+function toPercent() {
+  if (operator === "") {
+    if (num1 !== "") {
+      num1 = parseFloat(num1) / 100;
+    }
+  } else {
+    if (num2 !== "") {
+      num2 = parseFloat(num2) / 100;
     }
   }
   screen.textContent = num1 + operator + num2;
