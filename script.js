@@ -2,7 +2,7 @@ let num1 = "";
 let num2 = "";
 let operator = "";
 
-const screen = document.querySelector(".screen");
+const calcDisplay = document.querySelector(".screen");
 const digitBtns = document.querySelectorAll(".digit"); 
 const operatorBtns = document.querySelectorAll(".operator");
 const decimalBtn = document.querySelector(".decimal");
@@ -40,11 +40,11 @@ function calculate(e) {
     if (num1 === "") {
       num1 = 0;
     } else if (num2 !== "") {
-      screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
+      calcDisplay.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
     } 
     operator = e.target.textContent;
   }
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function addDecimal() {
@@ -53,7 +53,7 @@ function addDecimal() {
   } else if (operator !== "" && !num2.toString().includes(".")) {
     num2 += ".";
   }
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function changeSign() {
@@ -66,7 +66,7 @@ function changeSign() {
       num2 = -1 * parseFloat(num2);
     }
   }
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function toPercent() {
@@ -79,19 +79,19 @@ function toPercent() {
       num2 = round(parseFloat(num2) / 100);
     }
   }
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function clearCalc() {
   num1 = "";
   num2 = "";
   operator = "";
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function evaluate() {
   if (num1 !== "" && num2 !== "" && operator !== "") {
-    screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
+    calcDisplay.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
   }
 }
 
@@ -104,7 +104,7 @@ function deleteLast() {
   } else {
     num1 = num1.toString().slice(0, -1);
   }
-  screen.textContent = num1 + operator + num2;
+  calcDisplay.textContent = num1 + operator + num2;
 }
 
 function add(x, y) {
