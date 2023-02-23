@@ -4,6 +4,7 @@ const operators = document.querySelectorAll(".operator");
 const decimal = document.querySelector(".decimal");
 const sign = document.querySelector(".sign");
 const percent = document.querySelector(".percent");
+const clear = document.querySelector(".clear");
 
 let num1 = "";
 let num2 = "";
@@ -20,6 +21,7 @@ operators.forEach((operator) => {
 decimal.addEventListener("click", addDecimal);
 sign.addEventListener("click", changeSign);
 percent.addEventListener("click", toPercent);
+clear.addEventListener("click", clearCalc);
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
@@ -78,6 +80,13 @@ function toPercent() {
       num2 = parseFloat(num2) / 100;
     }
   }
+  screen.textContent = num1 + operator + num2;
+}
+
+function clearCalc() {
+  num1 = "";
+  num2 = "";
+  operator = "";
   screen.textContent = num1 + operator + num2;
 }
 
