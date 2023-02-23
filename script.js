@@ -1,3 +1,7 @@
+let num1 = "";
+let num2 = "";
+let operator = "";
+
 const screen = document.querySelector(".screen");
 const digits = document.querySelectorAll(".digit"); 
 const operators = document.querySelectorAll(".operator");
@@ -6,10 +10,7 @@ const sign = document.querySelector(".sign");
 const percent = document.querySelector(".percent");
 const clear = document.querySelector(".clear");
 const equals = document.querySelector(".equals");
-
-let num1 = "";
-let num2 = "";
-let operator = "";
+const delBtn = document.querySelector(".del");
 
 digits.forEach((digit) => {
   digit.addEventListener("click", calculate); 
@@ -24,6 +25,7 @@ sign.addEventListener("click", changeSign);
 percent.addEventListener("click", toPercent);
 clear.addEventListener("click", clearCalc);
 equals.addEventListener("click", evaluate);
+delBtn.addEventListener("click", deleteLast);
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
@@ -96,6 +98,18 @@ function evaluate() {
   if (num1 !== "" && num2 !== "" && operator !== "") {
     screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
   }
+}
+
+
+function deleteLast() {
+  if (num2 !== "") {
+    num2 = num2.toString().slice(0, -1);
+  } else if (num2 === "" && operator !== "") {
+    operator = "";
+  } else {
+    num1 = num1.toString().slice(0, -1);
+  }
+  screen.textContent = num1 + operator + num2;
 }
 
 function add(x, y) {
