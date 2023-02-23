@@ -58,11 +58,11 @@ function addDecimal() {
 
 function changeSign() {
   if (operator === "") {
-    if (num1 !== "") {
+    if (num1 !== "" && num1 !== ".") {
       num1 = -1 * parseFloat(num1);
     }
   } else {
-    if (num2 !== "") {
+    if (num2 !== "" && num2 !== ".") {
       num2 = -1 * parseFloat(num2);
     }
   }
