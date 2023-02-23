@@ -34,7 +34,6 @@ function calculate(e) {
     } else {
       num2 += e.target.textContent;  
     }
-    screen.textContent = num1 + operator + num2;
   }
 
   if (e.target.classList.contains("operator")) {
@@ -44,8 +43,8 @@ function calculate(e) {
       screen.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
     } 
     operator = e.target.textContent;
-    screen.textContent = num1 + operator + num2;
   }
+  screen.textContent = num1 + operator + num2;
 }
 
 function addDecimal() {
