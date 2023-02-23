@@ -55,9 +55,13 @@ function addDecimal() {
 
 function changeSign() {
   if (operator === "") {
-    num1 = -1 * parseFloat(num1);
+    if (num1 !== "") {
+      num1 = -1 * parseFloat(num1);
+    }
   } else {
-    num2 = -1 * parseFloat(num2);
+    if (num2 !== "") {
+      num2 = -1 * parseFloat(num2);
+    }
   }
   screen.textContent = num1 + operator + num2;
 }
