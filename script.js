@@ -20,12 +20,19 @@ operatorBtns.forEach((operator) => {
   operator.addEventListener("click", calculate);
 })
 
+window.addEventListener("keydown", keyboardInput);
 decimalBtn.addEventListener("click", addDecimal);
 signBtn.addEventListener("click", changeSign);
 percentBtn.addEventListener("click", toPercent);
 clearBtn.addEventListener("click", clearCalc);
 equalsBtn.addEventListener("click", evaluate);
 delBtn.addEventListener("click", deleteLast);
+
+function keyboardInput(e) {
+  if (e.code === "Equal") evaluate();
+  if (e.code === "NumpadDecimal" || e.code === "Period") addDecimal();
+  if (e.code === "Backspace" || e.code === "Delete") deleteLast();
+}
 
 function calculate(e) {
   if (e.target.classList.contains("digit")) {
