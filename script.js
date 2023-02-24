@@ -29,7 +29,7 @@ equalsBtn.addEventListener("click", evaluate);
 delBtn.addEventListener("click", deleteLast);
 
 function keyboardInput(e) {
-  if (e.code === "Equal") evaluate();
+  if (e.code === "Equal" || e.code === "Enter" || e.code === "NumpadEnter") evaluate();
   if (e.code === "NumpadDecimal" || e.code === "Period") addDecimal();
   if (e.code === "Backspace" || e.code === "Delete") deleteLast();
 }
