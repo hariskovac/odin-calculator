@@ -13,7 +13,7 @@ const equalsBtn = document.querySelector(".equals");
 const delBtn = document.querySelector(".del");
 
 digitBtns.forEach((digit) => {
-  digit.addEventListener("click", inputNumber); 
+  digit.addEventListener("click", () => inputNumber(digit.textContent)); 
 });
 
 operatorBtns.forEach((operator) => {
@@ -29,16 +29,17 @@ equalsBtn.addEventListener("click", evaluate);
 delBtn.addEventListener("click", deleteLast);
 
 function keyboardInput(e) {
+  if (e.key >= 0 && e.key <= 9) inputNumber(e.key);
   if (e.code === "Equal" || e.code === "Enter" || e.code === "NumpadEnter") evaluate();
   if (e.code === "NumpadDecimal" || e.code === "Period") addDecimal();
   if (e.code === "Backspace" || e.code === "Delete") deleteLast();
 }
 
-function inputNumber(e) {
+function inputNumber(num) {
   if (operator === "") {
-    num1 += e.target.textContent;
+    num1 += num;
   } else {
-    num2 += e.target.textContent;  
+    num2 += num;  
   }
 
   calcDisplay.textContent = num1 + operator + num2;
