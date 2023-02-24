@@ -13,11 +13,11 @@ const equalsBtn = document.querySelector(".equals");
 const delBtn = document.querySelector(".del");
 
 digitBtns.forEach((digit) => {
-  digit.addEventListener("click", calculate); 
+  digit.addEventListener("click", inputNumber); 
 });
 
 operatorBtns.forEach((operator) => {
-  operator.addEventListener("click", calculate);
+  operator.addEventListener("click", setOperator);
 })
 
 window.addEventListener("keydown", keyboardInput);
@@ -34,7 +34,7 @@ function keyboardInput(e) {
   if (e.code === "Backspace" || e.code === "Delete") deleteLast();
 }
 
-function calculate(e) {
+function inputNumber(e) {
   if (e.target.classList.contains("digit")) {
     if (operator === "") {
       num1 += e.target.textContent;
@@ -43,14 +43,17 @@ function calculate(e) {
     }
   }
 
-  if (e.target.classList.contains("operator")) {
-    if (num1 === "") {
-      num1 = 0;
-    } else if (num2 !== "") {
-      calcDisplay.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
-    } 
-    operator = e.target.textContent;
-  }
+  calcDisplay.textContent = num1 + operator + num2;
+}
+
+function setOperator(e) {
+  if (num1 === "") {
+    num1 = 0;
+  } else if (num2 !== "") {
+    calcDisplay.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
+  } 
+
+  operator = e.target.textContent;
   calcDisplay.textContent = num1 + operator + num2;
 }
 
