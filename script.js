@@ -35,12 +35,10 @@ function keyboardInput(e) {
 }
 
 function inputNumber(e) {
-  if (e.target.classList.contains("digit")) {
-    if (operator === "") {
-      num1 += e.target.textContent;
-    } else {
-      num2 += e.target.textContent;  
-    }
+  if (operator === "") {
+    num1 += e.target.textContent;
+  } else {
+    num2 += e.target.textContent;  
   }
 
   calcDisplay.textContent = num1 + operator + num2;
