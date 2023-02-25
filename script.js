@@ -30,6 +30,8 @@ delBtn.addEventListener("click", deleteLast);
 
 function keyboardInput(e) {
   if (e.key >= 0 && e.key <= 9) inputNumber(e.key);
+  if (e.key === "+" || e.key === "-" || e.key === "/") setOperator(` ${e.key} `);
+  if (e.key === "*") setOperator(" \u00D7 ")
   if (e.code === "Equal" || e.code === "Enter" || e.code === "NumpadEnter") evaluate();
   if (e.code === "NumpadDecimal" || e.code === "Period") addDecimal();
   if (e.code === "Backspace" || e.code === "Delete") deleteLast();
