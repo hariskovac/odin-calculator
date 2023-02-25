@@ -17,7 +17,7 @@ digitBtns.forEach((digit) => {
 });
 
 operatorBtns.forEach((operator) => {
-  operator.addEventListener("click", setOperator);
+  operator.addEventListener("click", () => setOperator(operator.textContent));
 })
 
 window.addEventListener("keydown", keyboardInput);
@@ -45,14 +45,14 @@ function inputNumber(num) {
   calcDisplay.textContent = num1 + operator + num2;
 }
 
-function setOperator(e) {
+function setOperator(operation) {
   if (num1 === "") {
     num1 = 0;
   } else if (num2 !== "") {
-    calcDisplay.textContent = operate(operator, parseFloat(num1), parseFloat(num2));
+    calcDisplay.textContent = operate(operation, parseFloat(num1), parseFloat(num2));
   } 
 
-  operator = e.target.textContent;
+  operator = operation;
   calcDisplay.textContent = num1 + operator + num2;
 }
 
